@@ -1,15 +1,18 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Arimo, PT_Sans } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const arimo = Arimo({
+  variable: "--font-aramo",
   subsets: ["latin"],
-});
+  weight: ["400", "500", "700"]
+})
+const ptSans = PT_Sans({
+  variable: "--font-heading",
+  subsets: ["latin"],
+  weight: ["700"]
+})
+
 
 export const metadata = {
   title: "Create Next App",
@@ -20,7 +23,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${ptSans.variable} ${arimo.className} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
