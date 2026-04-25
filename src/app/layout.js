@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono, Arimo, PT_Sans } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/Header";
 
 
 const arimo = Arimo({
@@ -25,7 +26,9 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${ptSans.variable} ${arimo.className} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <Header />
+        {children}</body>
     </html>
   );
 }
