@@ -45,6 +45,19 @@ const fetchJob = async (slug) => {
 }
 
 
+export async function generateMetadata({ params, searchParams }, parent) {
+    const slug = (await params).slug
+
+    const thisJob = await fetchJob(slug);
+
+    return {
+        title: thisJob.data.jobTitle + " | jobsinkpk.vercel.app",
+        description: thisJob.data.jobDescription,
+    }
+}
+
+export const config = { amp: true };
+
 
 
 
