@@ -8,7 +8,8 @@ const fetchJobs = async () => {
   try {
     const request = await fetch(`https://jobsinkpkbackend.vercel.app/publicaccess/jobs`, {
       method: "GET",
-      headers: { "content-type": "application/json" }
+      headers: { "content-type": "application/json" },
+      next: { revalidate: 7200 }
     })
 
     if (!request.ok) {
@@ -74,15 +75,13 @@ export default async function Home() {
             </thead>
             <tbody>
               {
-                allJobs.error ? <tr> <td colSpan={4} className="text-red-600 text-lg text-center my-5"> {allJobs.message} </td></tr> : allJobs.data.length < 1 ?
-                  <tr>
-                    <td colSpan={4} className="text-red-600 text-lg text-center my-5"> {"No Jobs found"} </td>
-                  </tr> : allJobs?.data?.map((ele, ind) => {
+                allJobs.error ? <tr><td colSpan={4} className="text-red-600 text-lg text-center my-5">{allJobs.message}</td></tr> : allJobs.data.length < 1 ?
+                  <tr><td colSpan={4} className="text-red-600 text-lg text-center my-5">{"No Jobs found"}</td></tr> : allJobs?.data?.map((ele, ind) => {
                     return <tr key={ind} className="my-1 border-b border-gray-400 rounded-md">
                       <th className="py-2 px-1 border-r border-gray-400 text-left">{ind + 1}</th>
                       <th className="md:w-[50%] w-autoo py-2 px-1 border-r border-gray-400 text-left">{ele.jobTitle}</th>
                       <th className="py-2 px-1 border-r border-gray-400 text-left">{ele.expiryDate}</th>
-                      <th className="py-2 px-1 border-r border-gray-400 text-left"> <Link href="/" className="w-full text-blue-600 p-2 rounded-lg font-bold">Job Details</Link> </th>
+                      <th className="py-2 px-1 border-r border-gray-400 text-left"> <Link href={`/job/${ele.slug}`} className="w-full text-blue-600 p-2 rounded-lg font-bold">Job Details</Link> </th>
                     </tr>
                   }
                   )}
