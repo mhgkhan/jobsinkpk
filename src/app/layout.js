@@ -16,31 +16,33 @@ const ptSans = PT_Sans({
 })
 
 
-export const metadata = {
-  title: "Latest Jobs in Pakistan | Govt & Private Jobs – Jobsinkpk",
-  description: "Explore daily updated jobs in Pakistan including govt, private, and freelance opportunities. Start your career today with Jobsinkpk.",
-  keywords: ["jobs in pakistan",
-    "pakistan jobs 2026",
-    "latest jobs in pakistan",
-    "govt jobs pakistan",
-    "private jobs pakistan",
-    "online jobs pakistan",
-    "jobsinkpk",
-    "careers pakistan",
-    "naukri pakistan",
-    "pakistan jobs today",
-    "latest govt jobs 2026 pakistan",
-    "jobs in pakistan for freshers",
-    "online jobs in pakistan without investment",
-    "jobs in kpk",
-    "jobs in punjab pakistan",
-    "jobs in sindh pakistan",
-    "jobs in balochistan pakistan",
-    "daily jobs updates pakistan",
-    "apply jobs online pakistan",
-    "new jobs in pakistan"],
+export async function generateMetadata({ params, searchParams }, parent) {
+  return {
+    title: "Latest Jobs in Pakistan | Govt & Private Jobs - Jobsinkpk",
+    description: "Explore daily updated jobs in Pakistan including govt, private, and freelance opportunities. Start your career today with Jobsinkpk.",
+    keywords: ["jobs in pakistan",
+      "pakistan jobs 2026",
+      "latest jobs in pakistan",
+      "govt jobs pakistan",
+      "private jobs pakistan",
+      "online jobs pakistan",
+      "jobsinkpk",
+      "careers pakistan",
+      "naukri pakistan",
+      "pakistan jobs today",
+      "latest govt jobs 2026 pakistan",
+      "jobs in pakistan for freshers",
+      "online jobs in pakistan without investment",
+      "jobs in kpk",
+      "jobs in punjab pakistan",
+      "jobs in sindh pakistan",
+      "jobs in balochistan pakistan",
+      "daily jobs updates pakistan",
+      "apply jobs online pakistan",
+      "new jobs in pakistan"],
+  }
+}
 
-};
 
 export default function RootLayout({ children }) {
   return (
