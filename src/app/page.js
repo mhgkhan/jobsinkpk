@@ -123,7 +123,7 @@ export default async function Home() {
 
   return (
     <main className="min-h-screen">
-      <section className="hero">
+      <section className="hero md:px-0 px-2">
 
         <div className="container mx-auto md:py-20 py-10 flex items-center justify-center md:flex-row flex-col gap-5">
 
