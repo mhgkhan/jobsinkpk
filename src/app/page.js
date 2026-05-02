@@ -51,7 +51,7 @@ const ipRequest = async (ip, os, device) => {
   let obj = {};
 
   try {
-    const request = await fetch(`${process.env.DOMAIn}/fromclient/visitor/`, {
+    const request = await fetch(`${process.env.DOMAIN}/fromclient/visitor/`, {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({
@@ -93,14 +93,13 @@ const ipRequest = async (ip, os, device) => {
 
 
 export default async function Home() {
-
+  
+  const allJobs = await fetchJobs();
+  
+  
   const userHeaders = await headers();
 
-
-
   const ip = userHeaders.get("x-forwarded-for")?.split(",")[0] || userHeaders.get("x-real-ip") || "Unknown";
-
-
   const ua = userHeaders.get("user-agent") || "Unknown";
 
   let os = "Unknown OS";
@@ -112,7 +111,6 @@ export default async function Home() {
 
   const device = /Mobile/i.test(ua) ? "Mobile" : "Desktop";
 
-  const allJobs = await fetchJobs();
   const resIp = await ipRequest(ip, os, device);
 
 
