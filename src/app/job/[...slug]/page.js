@@ -7,7 +7,7 @@ import React from 'react'
 const fetchJob = async (slug) => {
     let jobObj = {};
     try {
-        const request = await fetch(`${PROCESS.ENV.DOMAIN}/publicaccess/jobs/${slug}/`, {
+        const request = await fetch(`${process.env.DOMAIN}/publicaccess/jobs/${slug}/`, {
             method: "GET",
             headers: { "content-type": "application/json" }
         })

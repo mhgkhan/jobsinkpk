@@ -7,7 +7,7 @@ import Link from "next/link";
 const fetchJobs = async () => {
   let jobsObj = {};
   try {
-    const request = await fetch(`${PROCESS.ENV.DOMAIN}/publicaccess/jobs`, {
+    const request = await fetch(`${process.env.DOMAIN}/publicaccess/jobs`, {
       method: "GET",
       headers: { "content-type": "application/json" },
       next: { revalidate: 7200 }
