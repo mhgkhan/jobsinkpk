@@ -53,7 +53,7 @@ const ipRequest = async (ip, os, device) => {
 
   try {
     const request = await fetch(`${process.env.DOMAIn}/fromclient/visitor/`, {
-      method: POST,
+      method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({
         userIp: ip,
@@ -63,12 +63,13 @@ const ipRequest = async (ip, os, device) => {
     })
 
     const response = await request.json();
+    console.log(response)
 
 
     if (response.error) {
       obj.error = true;
       obj.success = false;
-      obj.message = error.message;
+      obj.message = response.message;
     }
 
 
@@ -119,6 +120,9 @@ export default async function Home() {
   const allJobs = await fetchJobs();
   const resIp = await ipRequest(ip, os, device);
 
+  console.log(resIp
+
+  )
 
 
   return (
@@ -134,11 +138,11 @@ export default async function Home() {
             </p>
           </div>
 
-          <SimpleDashboard visitors={resIp.error ? "1000" : resIp.data.allVisitor} />
+          <SimpleDashboard visitors={resIp.error ? "1000" : resIp.data.visitors} />
 
         </div>
       </section>
-      <section className="md:my-5 my-2">
+      <section className="md:my-5 my-2 md:px-0 px-2">
         <div className="container mx-auto">
           <h2 className="text-2xl font-bold"> Today Latest Jobs </h2>
           <table className="my-5 w-full border border-1 border-gray-300 md:text-auto text-sm">
