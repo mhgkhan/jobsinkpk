@@ -44,12 +44,28 @@ const fetchJob = async (slug) => {
 }
 
 
-export async function generateMetadata({ params }, parent) {
-    const slug = params.slug;
+
+// export const config = { amp: true };
+
+
+
+
+const page = async ({ params }) => {
+
+
+    const { slug } = await params;
     const thisJob = await fetchJob(slug);
 
-    return {
-        title: thisJob.data.jobTitle + " | jobsinkpk.vercel.app",
+
+    let lastDate, postDate;
+
+    if (!thisJob.error) {
+        lastDate = `${new Date(thisJob.data.expiryDate).getDate()}/ ${new Date(thisJob.data.expiryDate).getMonth()}/${new Date(thisJob.data.expiryDate).getFullYear()}`
+        postDate = `${new Date(thisJob.data.updatedAt).getDate()}/ ${new Date(thisJob.data.updatedAt).getMonth()}/${new Date(thisJob.data.updatedAt).getFullYear()}`
+    }
+
+     const metadata = {
+        title: thisJob.data.jobTitle,
         description: thisJob.data.jobDescription,
 
 
@@ -77,30 +93,7 @@ export async function generateMetadata({ params }, parent) {
                 thisJob.data.imageUrl || "https://jobsinkpk.vercel.app/default-preview.jpg",
             ],
         },
-    };
-}
-
-
-// export const config = { amp: true };
-
-
-
-
-const page = async ({ params }) => {
-
-
-    const { slug } = await params;
-    const thisJob = await fetchJob(slug);
-
-
-    let lastDate, postDate;
-
-    if (!thisJob.error) {
-        lastDate = `${new Date(thisJob.data.expiryDate).getDate()}/ ${new Date(thisJob.data.expiryDate).getMonth()}/${new Date(thisJob.data.expiryDate).getFullYear()}`
-        postDate = `${new Date(thisJob.data.updatedAt).getDate()}/ ${new Date(thisJob.data.updatedAt).getMonth()}/${new Date(thisJob.data.updatedAt).getFullYear()}`
     }
-
-
 
     return (
         <main className="min-h-screen">
