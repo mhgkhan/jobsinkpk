@@ -80,7 +80,7 @@ export default async function Home() {
                     return <tr key={ind} className="my-1 border-b border-gray-400 rounded-md">
                       <th className="py-2 px-1 border-r border-gray-400 text-left">{ind + 1}</th>
                       <th className="md:w-[50%] w-autoo py-2 px-1 border-r border-gray-400 text-left">{ele.jobTitle}</th>
-                      <th className="py-2 px-1 border-r border-gray-400 text-left">{ele.expiryDate}</th>
+                      <th className="py-2 px-1 border-r border-gray-400 text-left">{new Date(ele.expiryDate).toLocaleDateString()}</th>
                       <th className="py-2 px-1 border-r border-gray-400 text-left"> <Link href={`/job/${ele.slug}`} className="w-full text-blue-600 p-2 rounded-lg font-bold">Job Details</Link> </th>
                     </tr>
                   }
