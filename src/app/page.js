@@ -138,7 +138,7 @@ export default async function Home() {
             </p>
           </div>
 
-          <SimpleDashboard visitors={resIp.error ? "1000" : resIp.data.visitors} />
+          <SimpleDashboard visitors={resIp.error ? "1000" : resIp.data.visitors} jobs={resIp.error ? "1000" : resIp.data.jobs}/>
 
         </div>
       </section>
