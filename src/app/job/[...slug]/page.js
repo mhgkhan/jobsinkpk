@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react'
 
 
@@ -5,7 +6,6 @@ import React from 'react'
 
 const fetchJob = async (slug) => {
     let jobObj = {};
-    console.log("the slug from fucntion is ", slug)
     try {
         const request = await fetch(`https://jobsinkpkbackend.vercel.app/publicaccess/jobs/${slug}/`, {
             method: "GET",
@@ -20,7 +20,6 @@ const fetchJob = async (slug) => {
         }
 
         const response = await request.json();
-        console.log(response)
         if (response.success) {
             jobObj.success = true;
             jobObj.error = false;
@@ -85,6 +84,12 @@ const page = async ({ params }) => {
 
                     {
                         thisJob.error ? <h1>{thisJob.message}</h1> : <div className="page my-5 md:w-[80%] w-full mx-auto p-2 border-2 border-green-500 rounded-md">
+
+                            <div className="w-full md:h-[350px] h-[200px] object-fill">
+
+                                <Image src={thisJob.data.imageUrl} width={500} height={300} alt={thisJob.data.jobTitle + ' picture'} />
+
+                            </div>
 
                             <h1 className="mx-auto text-center md:text-4xl text-2xl font-bold">{thisJob.data.jobTitle}</h1>
                             <p className="text-lg text-center my-2">{thisJob.data.jobDescription}</p>
