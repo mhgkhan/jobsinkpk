@@ -10,7 +10,6 @@ const fetchJobs = async () => {
     const request = await fetch(`${process.env.DOMAIN}/publicaccess/jobs`, {
       method: "GET",
       headers: { "content-type": "application/json" },
-      next: { revalidate: 7200 }
     })
 
     if (!request.ok) {
