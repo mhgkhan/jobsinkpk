@@ -44,16 +44,42 @@ const fetchJob = async (slug) => {
 }
 
 
-export async function generateMetadata({ params, searchParams }, parent) {
-    const slug = (await params).slug
+export async function generateMetadata({ params }, parent) {
+  const slug = params.slug;
+  const thisJob = await fetchJob(slug);
 
-    const thisJob = await fetchJob(slug);
+  return {
+    title: thisJob.data.jobTitle + " | jobsinkpk.vercel.app",
+    description: thisJob.data.jobDescription,
 
-    return {
-        title: thisJob.data.jobTitle + " | jobsinkpk.vercel.app",
-        description: thisJob.data.jobDescription,
-    }
+
+    // ✅ Social preview image (Open Graph + Twitter)
+    openGraph: {
+      title: thisJob.data.jobTitle,
+      description: thisJob.data.jobDescription,
+      url: `https://jobsinkpk.vercel.app/job/${slug}`,
+      siteName: "JobsInKPK",
+      images: [
+        {
+          url: thisJob.data.jobImage || "https://jobsinkpk.vercel.app/default-preview.jpg",
+          width: 1200,
+          height: 630,
+          alt: thisJob.data.imageUrl,
+        },
+      ],
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: thisJob.data.jobTitle,
+      description: thisJob.data.jobDescription,
+      images: [
+        thisJob.data.imageUrl || "https://jobsinkpk.vercel.app/default-preview.jpg",
+      ],
+    },
+  };
 }
+
 
 // export const config = { amp: true };
 
