@@ -3,12 +3,6 @@ import React from 'react'
 
 const SimpleDashboard = ({visitors,jobs}) => {
 
-
-
-
-
-
-
     return (
         <div className='simpledashbboard md:w-[40%] w-full flex items-center justify-center gap-2 md:flex-col flex-row'>
 

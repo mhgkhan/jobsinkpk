@@ -1,6 +1,5 @@
 import SimpleDashboard from "@/components/SimpleDashboard";
 import { headers } from "next/headers";
-import Image from "next/image";
 import Link from "next/link";
 
 
@@ -113,16 +112,9 @@ export default async function Home() {
 
   const device = /Mobile/i.test(ua) ? "Mobile" : "Desktop";
 
-
-
-
-
   const allJobs = await fetchJobs();
   const resIp = await ipRequest(ip, os, device);
 
-  console.log(resIp
-
-  )
 
 
   return (
