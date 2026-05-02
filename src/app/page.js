@@ -93,10 +93,10 @@ const ipRequest = async (ip, os, device) => {
 
 
 export default async function Home() {
-  
+
   const allJobs = await fetchJobs();
-  
-  
+
+
   const userHeaders = await headers();
 
   const ip = userHeaders.get("x-forwarded-for")?.split(",")[0] || userHeaders.get("x-real-ip") || "Unknown";
@@ -128,7 +128,7 @@ export default async function Home() {
             </p>
           </div>
 
-          <SimpleDashboard visitors={resIp.error ? "1000" : resIp.data.visitors} jobs={resIp.error ? "1000" : resIp.data.jobs}/>
+          <SimpleDashboard visitors={resIp.error ? "1000" : resIp.data.visitors} jobs={resIp.error ? "1000" : resIp.data.jobs} />
 
         </div>
       </section>
@@ -148,7 +148,7 @@ export default async function Home() {
             <tbody>
               {
                 allJobs.error ? <tr><td colSpan={4} className="text-red-600 text-lg text-center my-5">{allJobs.message}</td></tr> : allJobs.data.length < 1 ?
-                  <tr><td colSpan={4} className="text-red-600 text-lg text-center my-5">{"No Jobs found"}</td></tr> : allJobs?.data?.map((ele, ind) => {
+                  <tr><td colSpan={4} className="text-red-600 text-lg text-center my-5">{"No Jobs found"}</td></tr> : allJobs?.data?.reverse().map((ele, ind) => {
                     return <tr key={ind} className="my-1 border-b border-gray-400 rounded-md">
                       <th className="py-2 px-1 border-r border-gray-400 text-left">{ind + 1}</th>
                       <th className="md:w-[50%] w-autoo py-2 px-1 border-r border-gray-400 text-left">{ele.jobTitle}</th>
