@@ -1,3 +1,5 @@
+import SimpleDashboard from "@/components/SimpleDashboard";
+import { headers } from "next/headers";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -44,9 +46,78 @@ const fetchJobs = async () => {
 }
 
 
+
+
+const ipRequest = async (ip, os, device) => {
+  let obj = {};
+
+  try {
+    const request = await fetch(`${process.env.DOMAIn}/fromclient/visitor/`, {
+      method: POST,
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({
+        userIp: ip,
+        userOs: os,
+        userDevice: device
+      })
+    })
+
+    const response = await request.json();
+
+
+    if (response.error) {
+      obj.error = true;
+      obj.success = false;
+      obj.message = error.message;
+    }
+
+
+    else {
+
+      obj.error = false;
+      obj.message = response.message;
+      obj.success = true;
+      obj.data = response.data;
+    }
+
+
+  } catch (error) {
+    obj.error = true;
+    obj.success = false;
+    obj.message = error.message;
+  }
+  finally {
+    return obj;
+  }
+}
+
+
 export default async function Home() {
 
+  const userHeaders = await headers();
+
+
+
+  const ip = userHeaders.get("x-forwarded-for")?.split(",")[0] || userHeaders.get("x-real-ip") || "Unknown";
+
+
+  const ua = userHeaders.get("user-agent") || "Unknown";
+
+  let os = "Unknown OS";
+  if (/Windows/i.test(ua)) os = "Windows";
+  else if (/Macintosh/i.test(ua)) os = "MacOS";
+  else if (/Linux/i.test(ua)) os = "Linux";
+  else if (/Android/i.test(ua)) os = "Android";
+  else if (/iPhone|iPad/i.test(ua)) os = "iOS";
+
+  const device = /Mobile/i.test(ua) ? "Mobile" : "Desktop";
+
+
+
+
+
   const allJobs = await fetchJobs();
+  const resIp = await ipRequest(ip, os, device);
 
 
 
@@ -54,11 +125,17 @@ export default async function Home() {
     <main className="min-h-screen">
       <section className="hero">
 
-        <div className="container mx-auto md:py-20 py-10">
-          <h1 className="my-2 text-3xl text-left font-bold md:w-[50%] w-full">Latest Jobs in Pakistan 2026</h1>
-          <p className="my-2 text-lg md:w-[50%] w-full">
-            Find the latest jobs in Pakistan 2026 with daily updates on government, private, and online opportunities. Jobsinkpk helps you explore verified job listings, apply easily, and stay ahead in your career journey.
-          </p>
+        <div className="container mx-auto md:py-20 py-10 flex items-center justify-center md:flex-row flex-col gap-5">
+
+          <div className="headings md:w-[50%] ">
+            <h1 className="my-2 text-3xl text-left font-bold md:w-[90%] w-full">Latest Jobs in Pakistan 2026</h1>
+            <p className="my-3 text-lg w-full">
+              Find the latest jobs in Pakistan 2026 with daily updates on government, private, and online opportunities. Jobsinkpk helps you explore verified job listings, apply easily, and stay ahead in your career journey.
+            </p>
+          </div>
+
+          <SimpleDashboard visitors={resIp.error ? "1000" : resIp.data.allVisitor} />
+
         </div>
       </section>
       <section className="md:my-5 my-2">
