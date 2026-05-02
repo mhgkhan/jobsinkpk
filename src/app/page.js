@@ -1,6 +1,7 @@
 import SimpleDashboard from "@/components/SimpleDashboard";
 import { headers } from "next/headers";
 import Link from "next/link";
+import { FaFacebook } from "react-icons/fa";
 
 
 
@@ -126,6 +127,7 @@ export default async function Home() {
             <p className="my-3 text-lg w-full">
               Find the latest jobs in Pakistan 2026 with daily updates on government, private, and online opportunities. Jobsinkpk helps you explore verified job listings, apply easily, and stay ahead in your career journey.
             </p>
+            <button><Link href="https://www.facebook.com/profile.php?id=61580530301647" className=" flex items-center justify-center gap-2 p-2 rounded-md text-white font-bold text-lg my-2 bg-blue-700 w-auto" ><FaFacebook /> Follow Page </Link></button>
           </div>
 
           <SimpleDashboard visitors={resIp.error ? "1000" : resIp.data.visitors} jobs={resIp.error ? "1000" : resIp.data.jobs} />
