@@ -70,8 +70,8 @@ const page = async ({ params }) => {
     let lastDate, postDate;
 
     if (!thisJob.error) {
-        lastDate = `${new Date(thisJob.data.expiryDate).getDate()}/ ${new Date(thisJob.data.expiryDate).getFullYear()}/${new Date(thisJob.data.expiryDate).getFullYear()}`
-        postDate = `${new Date(thisJob.data.updatedAt).getDate()}/ ${new Date(thisJob.data.updatedAt).getFullYear()}/${new Date(thisJob.data.updatedAt).getFullYear()}`
+        lastDate = `${new Date(thisJob.data.expiryDate).getDate()}/ ${new Date(thisJob.data.expiryDate).getMonth()}/${new Date(thisJob.data.expiryDate).getFullYear()}`
+        postDate = `${new Date(thisJob.data.updatedAt).getDate()}/ ${new Date(thisJob.data.updatedAt).getMonth()}/${new Date(thisJob.data.updatedAt).getFullYear()}`
     }
 
 
