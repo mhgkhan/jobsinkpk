@@ -3,10 +3,11 @@ import Link from "next/link";
 
 
 
+
 const fetchJobs = async () => {
   let jobsObj = {};
   try {
-    const request = await fetch(`https://jobsinkpkbackend.vercel.app/publicaccess/jobs`, {
+    const request = await fetch(`${PROCESS.ENV.DOMAIN}/publicaccess/jobs`, {
       method: "GET",
       headers: { "content-type": "application/json" },
       next: { revalidate: 7200 }
@@ -64,12 +65,13 @@ export default async function Home() {
       <section className="md:my-5 my-2">
         <div className="container mx-auto">
           <h2 className="text-2xl font-bold"> Today Latest Jobs </h2>
-          <table className="my-5 w-full border border-1 border-gray-300">
+          <table className="my-5 w-full border border-1 border-gray-300 md:text-auto text-sm">
             <thead>
               <tr className="my-1 border-b border-gray-400 rounded-md">
-                <th className=" py-2 px-1 border-r border-gray-400 text-left">S.No</th>
+                <th className=" py-2 px-1 border-r border-gray-400 text-left wrap-anywhere">S.No</th>
                 <th className="md:w-[50%] w-autoo py-2 px-1 border-r border-gray-400 text-left">Title</th>
-                <th className=" py-2 px-1 border-r border-gray-400 text-left">Last Date</th>
+                <th className=" py-2 px-1 border-r border-gray-400 text-left wrap-anywhere">Advertisement </th>
+                <th className=" py-2 px-1 border-r border-gray-400 text-left ">Last Date</th>
                 <th className=" py-2 px-1 border-r border-gray-400 text-left">Job Details </th>
               </tr>
             </thead>
@@ -80,7 +82,8 @@ export default async function Home() {
                     return <tr key={ind} className="my-1 border-b border-gray-400 rounded-md">
                       <th className="py-2 px-1 border-r border-gray-400 text-left">{ind + 1}</th>
                       <th className="md:w-[50%] w-autoo py-2 px-1 border-r border-gray-400 text-left">{ele.jobTitle}</th>
-                      <th className="py-2 px-1 border-r border-gray-400 text-left">{new Date(ele.expiryDate).toLocaleDateString()}</th>
+                      <th className="py-2 px-1 border-r border-gray-400 text-left wrap-anywhere"><Link href={ele.imageUrl} target="_blank" className="w-full text-blue-600 p-2 wrap-anywhere rounded-lg font-bold">Advertisement</Link></th>
+                      <th className="py-2 px-1 border-r border-gray-400 text-left wrap-anywhere">{new Date(ele.expiryDate).toLocaleDateString()}</th>
                       <th className="py-2 px-1 border-r border-gray-400 text-left"> <Link href={`/job/${ele.slug}`} className="w-full text-blue-600 p-2 rounded-lg font-bold">Job Details</Link> </th>
                     </tr>
                   }

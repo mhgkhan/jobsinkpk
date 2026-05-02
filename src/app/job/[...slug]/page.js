@@ -7,7 +7,7 @@ import React from 'react'
 const fetchJob = async (slug) => {
     let jobObj = {};
     try {
-        const request = await fetch(`https://jobsinkpkbackend.vercel.app/publicaccess/jobs/${slug}/`, {
+        const request = await fetch(`${PROCESS.ENV.DOMAIN}/publicaccess/jobs/${slug}/`, {
             method: "GET",
             headers: { "content-type": "application/json" }
         })
@@ -55,7 +55,7 @@ export async function generateMetadata({ params, searchParams }, parent) {
     }
 }
 
-export const config = { amp: true };
+// export const config = { amp: true };
 
 
 
@@ -87,11 +87,11 @@ const page = async ({ params }) => {
 
                             <div className="w-full md:h-[350px] h-[200px] object-fill">
 
-                                <Image src={thisJob.data.imageUrl} width={500} height={300} alt={thisJob.data.jobTitle + ' picture'} />
+                                <Image src={thisJob.data.imageUrl} width={500} height={300} alt={thisJob.data.jobTitle + ' picture'} className="w-full h-full object-fill" />
 
                             </div>
 
-                            <h1 className="mx-auto text-center md:text-4xl text-2xl font-bold">{thisJob.data.jobTitle}</h1>
+                            <h1 className="mx-auto text-center md:text-4xl text-2xl font-bold my-1" >{thisJob.data.jobTitle}</h1>
                             <p className="text-lg text-center my-2">{thisJob.data.jobDescription}</p>
 
                             <div className="px-2 my-5 flex items-center justify-between flex-wrap">
