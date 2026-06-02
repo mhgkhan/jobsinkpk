@@ -58,6 +58,9 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${ptSans.variable} ${arimo.className} h-full antialiased`}
     >
+      <head>
+        <meta name="google-site-verification" content="bJBzMveePqI6TnPkULD80gIVsMLRZAglc8eupcJOkt0" />
+      </head>
       <body className="min-h-full flex flex-col">
         <Header />
         {children}
