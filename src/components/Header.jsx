@@ -12,7 +12,7 @@ const Header = () => {
 
     return (
 
-        <header className='bg-green-500 md:rounded-none rounded-md'>
+        <header className='bg-[#0daf87] md:rounded-none rounded-md'>
             <nav className="container mx-auto flex items-end justify-between flex-wrap gap-5 py-1 px-1 ">
                 <div className="Logo flex items-end justify-between gap-5 md:w-auto w-full">
                     <Link href="/" className='flex items-center justify-center gap-2 text-xl underline text-white font-bold'><Image src="/logo.png" alt='Jobs in KPK Logo' width="100" height={100} className='rounded-full w-[80px] h-[80px] ' /> JOBSINKPK</Link>

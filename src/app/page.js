@@ -1,12 +1,13 @@
 import SimpleDashboard from "@/components/SimpleDashboard";
 import { headers } from "next/headers";
+import Image from "next/image";
 import Link from "next/link";
 import { FaFacebook } from "react-icons/fa";
 
 
 
 
-const fetchJobs = async () => {
+export const fetchJobs = async () => {
   let jobsObj = {};
   try {
     const request = await fetch(`${process.env.DOMAIN}/publicaccess/jobs`, {
@@ -63,7 +64,7 @@ const ipRequest = async (ip, os, device) => {
     })
 
     const response = await request.json();
-    console.log(response)
+    // console.log(response)
 
 
     if (response.error) {
@@ -117,46 +118,51 @@ export default async function Home() {
 
 
   return (
-    <main className="min-h-screen">
-      <section className="hero md:px-0 px-2">
-
-        <div className="container mx-auto md:py-20 py-10 flex items-center justify-center md:flex-row flex-col gap-5">
-
-          <div className="headings md:w-[50%] ">
-            <h1 className="my-2 text-3xl text-left font-bold md:w-[90%] w-full">Latest Jobs in Pakistan 2026</h1>
-            <p className="my-3 text-lg w-full">
-              Find the latest jobs in Pakistan 2026 with daily updates on government, private, and online opportunities. Jobsinkpk helps you explore verified job listings, apply easily, and stay ahead in your career journey.
-            </p>
-            <button><Link href="https://www.facebook.com/profile.php?id=61580530301647" className=" flex items-center justify-center gap-2 p-2 rounded-md text-white font-bold text-lg my-2 bg-blue-700 w-auto" ><FaFacebook /> Follow Page </Link></button>
-          </div>
-
-          <SimpleDashboard visitors={resIp.error ? "1000" : resIp.data.visitors} jobs={resIp.error ? "1000" : resIp.data.jobs} />
-
+    <main className="min-h-screen ">
+      <section className="hero relative block h-[50vh] ">
+        <div className="hero-x w-full h-full relative object-cover">
+          <Image src="/hero.png" alt="job in kpk hero picture" width="800" height="400" className="w-full h-full object-cover" />
         </div>
+        <div className="hero-y w-full h-full absolute inset-0 bg-[#d9f9df80] backdrop-blur-sm">
+          <div className="container mx-auto md:py-10 py-10 flex items-center justify-center md:flex-row flex-col gap-5">
+
+            <div className="headings md:w-[50%] ">
+              <h1 className="my-2 text-3xl text-left font-bold md:w-[90%] w-full">Latest Jobs in Pakistan 2026</h1>
+              <p className="my-3 text-lg w-full">
+                Find the latest jobs in Pakistan 2026 with daily updates on government, private, and online opportunities. Jobsinkpk helps you explore verified job listings, apply easily, and stay ahead in your career journey.
+              </p>
+              <button><Link href="https://www.facebook.com/profile.php?id=61580530301647" className=" flex items-center justify-center gap-2 p-2 rounded-md text-white font-bold text-lg my-2 bg-blue-700 w-auto" ><FaFacebook className="text-3xl"/> Follow Page </Link></button>
+            </div>
+
+            <SimpleDashboard visitors={resIp.error ? "1000" : resIp.data.visitors} jobs={resIp.error ? "1000" : resIp.data.jobs} />
+
+          </div>
+        </div>
+
       </section>
-      <section className="md:my-5 my-2 md:px-0 px-2">
+      <section className="md:my-5 my-2 md:px-0 px-2 text-lg">
         <div className="container mx-auto">
           <h2 className="text-2xl font-bold"> Today Latest Jobs </h2>
           <table className="my-5 w-full border border-1 border-gray-300 md:text-auto text-sm">
             <thead>
-              <tr className="my-1 border-b border-gray-400 rounded-md">
-                <th className=" py-2 px-1 border-r border-gray-400 text-left wrap-anywhere">S.No</th>
-                <th className="md:w-[50%] w-autoo py-2 px-1 border-r border-gray-400 text-left">Title</th>
-                <th className=" py-2 px-1 border-r border-gray-400 text-left wrap-anywhere">Advertisement </th>
-                <th className=" py-2 px-1 border-r border-gray-400 text-left ">Last Date</th>
-                <th className=" py-2 px-1 border-r border-gray-400 text-left">Job Details </th>
+              <tr className=" text-xl my-1 border-b border-gray-400 rounded-md">
+                <th className=" rounded-md text-xl  py-2 px-1 border-r border-gray-400 text-left wrap-anywhere">S.No</th>
+                <th className=" rounded-md text-xl md:w-[50%] w-autoo py-2 px-1 border-r border-gray-400 text-left">Title</th>
+                <th className=" rounded-md text-xl  py-2 px-1 border-r border-gray-400 text-left wrap-anywhere">Advertisement </th>
+                <th className=" rounded-md text-xl  py-2 px-1 border-r border-gray-400 text-left ">Last Date</th>
+                <th className=" rounded-md text-xl  py-2 px-1 border-r border-gray-400 text-left">Job Details </th>
               </tr>
             </thead>
             <tbody>
               {
                 allJobs.error ? <tr><td colSpan={4} className="text-red-600 text-lg text-center my-5">{allJobs.message}</td></tr> : allJobs.data.length < 1 ?
-                  <tr><td colSpan={4} className="text-red-600 text-lg text-center my-5">{"No Jobs found"}</td></tr> : allJobs?.data?.reverse().map((ele, ind) => {
-                    return <tr key={ind} className="my-1 border-b border-gray-400 rounded-md">
-                      <th className="py-2 px-1 border-r border-gray-400 text-left">{ind + 1}</th>
-                      <th className="md:w-[50%] w-autoo py-2 px-1 border-r border-gray-400 text-left">{ele.jobTitle}</th>
-                      <th className="py-2 px-1 border-r border-gray-400 text-left wrap-anywhere"><Link href={ele.imageUrl} target="_blank" className="w-full text-blue-600 p-2 wrap-anywhere rounded-lg font-bold">Advertisement</Link></th>
-                      <th className="py-2 px-1 border-r border-gray-400 text-left wrap-anywhere">{new Date(ele.expiryDate).toLocaleDateString()}</th>
-                      <th className="py-2 px-1 border-r border-gray-400 text-left"> <Link href={`/job/${ele.slug}`} className="w-full text-blue-600 p-2 rounded-lg font-bold">Job Details</Link> </th>
+                  <tr><td colSpan={4} className="text-red-600 text-lg text-center my-5">{"No Active Advertaisments"}</td></tr> : allJobs?.data?.reverse().map((ele, ind) => {
+                    return <tr key={ind} className="my-1 border-b border-gray-400 rounded-md even:bg-[#b6f8e8e1]">
+                      <th className="rounded-md text-lg text-center py-2 px-1   ">{ind + 1}</th>
+                      <th className="rounded-md text-lg text-center md:w-[50%] w-autoo py-2 px-1    text-left">{ele.jobTitle}</th>
+                      <th className="rounded-md text-lg text-center py-2 px-1    wrap-anywhere"><Link href={ele.imageUrl} target="_blank" className="w-full text-blue-600 p-2 wrap-anywhere rounded-lg font-bold">Advertisement</Link></th>
+                      <th className="rounded-md text-lg text-center py-2 px-1   wrap-anywhere">{new Date(ele.expiryDate).toLocaleDateString()}</th>
+                      <th className="rounded-md text-lg text-center py-2 px-1   "> <Link href={`/job/${ele.slug}`} className="w-full text-blue-600 p-2 rounded-lg font-bold">Job Details</Link> </th>
                     </tr>
                   }
                   )}
