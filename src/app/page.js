@@ -131,7 +131,7 @@ export default async function Home() {
               <p className="my-3 text-lg w-full">
                 Find the latest jobs in Pakistan 2026 with daily updates on government, private, and online opportunities. Jobsinkpk helps you explore verified job listings, apply easily, and stay ahead in your career journey.
               </p>
-              <button><Link href="https://www.facebook.com/profile.php?id=61580530301647" className=" flex items-center justify-center gap-2 p-2 rounded-md text-white font-bold text-lg my-2 bg-blue-700 w-auto" ><FaFacebook className="text-3xl"/> Follow Page </Link></button>
+              <button><Link href="https://www.facebook.com/profile.php?id=61580530301647" className=" flex items-center justify-center gap-2 p-2 rounded-md text-white font-bold text-lg my-2 bg-blue-700 w-auto" ><FaFacebook className="text-3xl" /> Follow Page </Link></button>
             </div>
 
             <SimpleDashboard visitors={resIp.error ? "1000" : resIp.data.visitors} jobs={resIp.error ? "1000" : resIp.data.jobs} />
@@ -146,11 +146,11 @@ export default async function Home() {
           <table className="my-5 w-full border border-1 border-gray-300 md:text-auto text-sm">
             <thead>
               <tr className=" text-xl my-1 border-b border-gray-400 rounded-md">
-                <th className=" rounded-md text-xl  py-2 px-1 border-r border-gray-400 text-left wrap-anywhere">S.No</th>
-                <th className=" rounded-md text-xl md:w-[50%] w-autoo py-2 px-1 border-r border-gray-400 text-left">Title</th>
-                <th className=" rounded-md text-xl  py-2 px-1 border-r border-gray-400 text-left wrap-anywhere">Advertisement </th>
-                <th className=" rounded-md text-xl  py-2 px-1 border-r border-gray-400 text-left ">Last Date</th>
-                <th className=" rounded-md text-xl  py-2 px-1 border-r border-gray-400 text-left">Job Details </th>
+                <th className=" rounded-md text-xl  py-2 px-1 border-r border-gray-400 text-center wrap-anywhere">S.No</th>
+                <th className=" rounded-md text-xl md:w-[50%] w-autoo py-2 px-1 border-r border-gray-400 text-center">Title</th>
+                <th className=" rounded-md text-xl  py-2 px-1 border-r border-gray-400 text-centert wrap-anywhere">Advertisement </th>
+                <th className=" rounded-md text-xl  py-2 px-1 border-r border-gray-400 text-center ">Last Date</th>
+                <th className=" rounded-md text-xl  py-2 px-1 border-r border-gray-400 text-center">Job Details </th>
               </tr>
             </thead>
             <tbody>
