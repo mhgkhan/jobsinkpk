@@ -1,26 +1,24 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset>
-
+﻿<?xml version="1.0" encoding="UTF-8"?>
+		<!--	created with www.mysitemapgenerator.com	-->
+		<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-  <loc>https://jobsinkpk.vercel.app/</loc>
-  <lastmod>2026-06-02T13:50:32+00:00</lastmod>
-  <priority>1.00</priority>
+	<loc>https://jobsinkpk.vercel.app/</loc>
+	<lastmod>2026-06-02T16:02:59+01:00</lastmod>
+	<priority>1.0</priority>
 </url>
 <url>
-  <loc>https://jobsinkpk.vercel.app/contactus</loc>
-  <lastmod>2026-06-02T13:50:32+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://jobsinkpk.vercel.app/contactus</loc>
+	<lastmod>2026-06-02T16:02:59+01:00</lastmod>
+	<priority>1.0</priority>
 </url>
 <url>
-  <loc>https://jobsinkpk.vercel.app/job/prison-department-kpk-jobs-2026:-apply-online-via-etea-for-jail-warders-0-1780398913001</loc>
-  <lastmod>2026-06-02T13:50:32+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://jobsinkpk.vercel.app/job/prison-department-kpk-jobs-2026:-apply-online-via-etea-for-jail-warders-0-1780398913001</loc>
+	<lastmod>2026-06-02T16:02:59+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://jobsinkpk.vercel.app/job/join-paf-as-doctor-2026:-apply-online-for-137-csc-medical-branch-(gdmos-&amp;-specialists)-0-1780397359235</loc>
-  <lastmod>2026-06-02T13:50:32+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://jobsinkpk.vercel.app/job/join-paf-as-doctor-2026:-apply-online-for-137-csc-medical-branch-(gdmos-&amp;-specialists)-0-1780397359235</loc>
+	<lastmod>2026-06-02T16:02:59+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
-
-
 </urlset>
