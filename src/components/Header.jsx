@@ -27,14 +27,14 @@ const Header = () => {
                     <li className='md:w-auto w-full text-center'>
                         <Link href={"/"} className='text-white font-bold text-lg'>Home</Link>
                     </li>
-                    <li className='md:w-auto w-full text-center'>
+                    {/* <li className='md:w-auto w-full text-center'>
                         <Link href={"/"} className='text-white font-bold text-lg'>Govt Jobs</Link>
                     </li>
                     <li className='md:w-auto w-full text-center'>
                         <Link href={"/"} className='text-white font-bold text-lg'>Private Jobs</Link>
-                    </li>
+                    </li> */}
                     <li className='md:w-auto w-full text-center'>
-                        <Link href={"/"} className='text-white font-bold text-lg'>Contact us </Link>
+                        <Link href={"/contactus"} className='text-white font-bold text-lg'>Contact us </Link>
                     </li>
                 </ul>
             </nav>
