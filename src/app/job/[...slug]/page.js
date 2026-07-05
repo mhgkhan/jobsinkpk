@@ -57,14 +57,9 @@ const page = async ({ params }) => {
     const thisJob = await fetchJob(slug);
 
 
-    let lastDate, postDate;
 
-    if (!thisJob.error) {
-        lastDate = `${new Date(thisJob.data.expiryDate).getDate()}/ ${new Date(thisJob.data.expiryDate).getMonth()}/${new Date(thisJob.data.expiryDate).getFullYear()}`
-        postDate = `${new Date(thisJob.data.updatedAt).getDate()}/ ${new Date(thisJob.data.updatedAt).getMonth()}/${new Date(thisJob.data.updatedAt).getFullYear()}`
-    }
 
-     const metadata = {
+    const metadata = {
         title: thisJob.data.jobTitle,
         description: thisJob.data.jobDescription,
 
@@ -121,11 +116,11 @@ const page = async ({ params }) => {
                                 </div>
                                 <div className=" block-category px-1 flex items-center justify-center gap-2 flex-col  border border-1 border-green-500 my-2 md:w-auto w-full rounded-md">
                                     <h3>Post Date</h3>
-                                    <p className="text-lg font-bold">{postDate}</p>
+                                    <p className="text-lg font-bold">{thisJob.data.expiryDate}</p>
                                 </div>
                                 <div className=" block-category px-1 flex items-center justify-center gap-2 flex-col  border border-1 border-green-500 my-2 md:w-auto w-full rounded-md">
                                     <h3>Last Date </h3>
-                                    <p className="text-lg font-bold">{lastDate}</p>
+                                    <p className="text-lg font-bold">{thisJob.data.updatedAt}</p>
                                 </div>
 
                             </div>
