@@ -116,11 +116,11 @@ const page = async ({ params }) => {
                                 </div>
                                 <div className=" block-category px-1 flex items-center justify-center gap-2 flex-col  border border-1 border-green-500 my-2 md:w-auto w-full rounded-md">
                                     <h3>Post Date</h3>
-                                    <p className="text-lg font-bold">{thisJob.data.expiryDate}</p>
+                                    <p className="text-lg font-bold">{`${new Date(thisJob.data.updatedAt).getDate()}-${new Date(thisJob.data.updatedAt).getMonth()}-${new Date(thisJob.data.updatedAt).getFullYear()}`}</p>
                                 </div>
                                 <div className=" block-category px-1 flex items-center justify-center gap-2 flex-col  border border-1 border-green-500 my-2 md:w-auto w-full rounded-md">
                                     <h3>Last Date </h3>
-                                    <p className="text-lg font-bold">{thisJob.data.updatedAt}</p>
+                                    <p className="text-lg font-bold">{`${new Date(thisJob.data.expiryDate).getDate()}-${new Date(thisJob.data.expiryDate).getMonth()}-${new Date(thisJob.data.expiryDate).getFullYear()}`}</p>
                                 </div>
 
                             </div>
