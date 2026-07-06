@@ -45,8 +45,6 @@ const fetchJob = async (slug) => {
 
 
 
-// export const config = { amp: true };
-
 
 
 
@@ -63,6 +61,9 @@ const page = async ({ params }) => {
         title: thisJob.data.jobTitle,
         description: thisJob.data.jobDescription,
 
+        icons: {
+            icon: thisJob.data.imageUrl,
+        },
 
         // ✅ Social preview image (Open Graph + Twitter)
         openGraph: {
