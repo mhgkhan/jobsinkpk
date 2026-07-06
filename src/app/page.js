@@ -161,7 +161,7 @@ export default async function Home() {
                       <th className="rounded-md text-center py-2 px-1   ">{ind + 1}</th>
                       <th className="rounded-md  text-center md:w-[50%] w-autoo py-2 px-1    text-left">{ele.jobTitle}</th>
                       {/* <th className="rounded-md text-center py-2 px-1    wrap-anywhere"><Link href={ele.imageUrl} target="_blank" className="w-full text-blue-600 p-2 wrap-anywhere rounded-lg font-bold">Advertisement</Link></th> */}
-                      <th className="rounded-md text-center py-2 px-1   wrap-anywhere">{new Date(ele.expiryDate).toLocaleDateString()}</th>
+                      <th className="rounded-md text-center py-2 px-1   wrap-anywhere">{`${new Date(ele.expiryDate).getDate()}-${new Date(ele.expiryDate).getMonth()}-${new Date(ele.expiryDate).getFullYear()}`}</th>
                       <th className="rounded-md text-center py-2 px-1   "> <Link href={`/job/${ele.slug}`} className="w-full text-blue-600 p-2 rounded-lg font-bold">Job Details</Link> </th>
                     </tr>
                   }
