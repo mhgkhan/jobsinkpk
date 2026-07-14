@@ -1,24 +1,41 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-		<!--	created with www.mysitemapgenerator.com	-->
-		<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url>
-	<loc>https://jobsinkpk.vercel.app/</loc>
-	<lastmod>2026-06-02T16:02:59+01:00</lastmod>
-	<priority>1.0</priority>
-</url>
-<url>
-	<loc>https://jobsinkpk.vercel.app/contactus</loc>
-	<lastmod>2026-06-02T16:02:59+01:00</lastmod>
-	<priority>1.0</priority>
-</url>
-<url>
-	<loc>https://jobsinkpk.vercel.app/job/prison-department-kpk-jobs-2026:-apply-online-via-etea-for-jail-warders-0-1780398913001</loc>
-	<lastmod>2026-06-02T16:02:59+01:00</lastmod>
-	<priority>0.8</priority>
-</url>
-<url>
-	<loc>https://jobsinkpk.vercel.app/job/join-paf-as-doctor-2026:-apply-online-for-137-csc-medical-branch-(gdmos-&amp;-specialists)-0-1780397359235</loc>
-	<lastmod>2026-06-02T16:02:59+01:00</lastmod>
-	<priority>0.8</priority>
-</url>
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/download/be753dd72-97b8ad332/sitemap.xsl"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <url>
+       <loc>https://www.jobsinkpk.online/</loc>
+       <lastmod>2026-07-14T06:02:34+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>1.0000</priority>
+  </url>
+  <url>
+       <loc>https://www.jobsinkpk.online/contactus</loc>
+       <lastmod>2026-07-14T06:02:34+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://www.jobsinkpk.online/job/etea-ntfp-directorate-kpk-jobs-2026-|-inspector-&amp;-supervisor-positions-online-apply-0-1783224132187</loc>
+       <lastmod>2026-07-14T06:02:34+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://www.jobsinkpk.online/job/etea-forest-research-and-development-directorate-jobs-2026-|-apply-online-0-1783223629328</loc>
+       <lastmod>2026-07-14T06:02:34+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://www.jobsinkpk.online/job/dhq-hospital-landikotal-jobs-2026-–-50+-paramedical-vacancies-via-etea-|-apply-online-0-1783222755434</loc>
+       <lastmod>2026-07-14T06:02:34+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://www.jobsinkpk.online/job/etea-forest-guard-jobs-2026-–-khyber-forest-division-recruitment-|-apply-online-0-1783221984794</loc>
+       <lastmod>2026-07-14T06:02:34+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
+  </url>
 </urlset>
