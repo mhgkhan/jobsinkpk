@@ -127,9 +127,11 @@ export default async function Home() {
           <div className="container mx-auto md:py-5 py-5 flex items-center justify-center md:flex-row flex-col md:gap-5 gap-2">
 
             <div className="headings md:w-[50%] ">
-              <h1 className="my-2 text-3xl text-left font-bold md:w-[90%] w-full">Latest Jobs in Pakistan 2026</h1>
+              <h1 className="my-2 text-3xl text-left font-bold md:w-[90%] w-full">{`Latest Jobs in Pakistan ${new Date().getFullYear()}`}</h1>
               <p className="my-3 text-lg w-full">
-                Find the latest jobs in Pakistan 2026 with daily updates on government, private, and online opportunities. Jobsinkpk helps you explore verified job listings, apply easily, and stay ahead in your career journey.
+                {`
+                Find the latest jobs in Pakistan  ${new Date().getFullYear()} with daily updates on government, private, and online opportunities. Jobsinkpk helps you explore verified job listings, apply easily, and stay ahead in your career journey.
+              `}
               </p>
               <button><Link href="https://www.facebook.com/profile.php?id=61580530301647" className=" flex items-center justify-center gap-2 p-2 rounded-md text-white font-bold text-lg my-2 bg-blue-700 w-auto" ><FaFacebook className="text-3xl" /> Follow Page </Link></button>
             </div>
