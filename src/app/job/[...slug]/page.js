@@ -170,7 +170,7 @@ const page = async ({ params }) => {
 
                             <h1 className="mx-auto text-center md:text-4xl text-2xl font-bold my-1" >{thisJob.data.jobTitle}</h1>
                             <p className="text-lg text-center my-2">{thisJob.data.jobDescription}</p>
-                            <p className="text-lg text-center my-2">Visitors: {resIp.data.allVisitor??"00+"}</p>
+                            {/* <p className="text-lg text-center my-2">Visitors: {resIp.data.allVisitor??"00+"}</p> */}
 
                             <div className="px-2 my-5 flex items-center justify-between flex-wrap">
 
