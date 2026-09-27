@@ -164,7 +164,7 @@ const page = async ({ params }) => {
 
                             <div className="w-full md:h-[350px] h-[200px] object-fill">
 
-                                <Image src={thisJob.data.imageUrl} width={500} height={300} alt={thisJob.data.jobTitle + ' picture'} className="w-full h-full object-fill" />
+                                <Image src={thisJob.data.imageUrl} width={500} height={300} alt={thisJob.data.jobTitle + ' picture'} className="object-cover" />
 
                             </div>
 
