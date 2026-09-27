@@ -162,7 +162,7 @@ const page = async ({ params }) => {
                     {
                         thisJob.error ? <h1>{thisJob.message}</h1> : <div className="page my-5 md:w-[80%] w-full mx-auto p-2 border-2 border-green-500 rounded-md">
 
-                            <div className="w-full md:h-[350px] h-[200px] object-fill">
+                            <div className="w-full md:h-[350px] h-[200px] object-fill overflow-hidden">
 
                                 <Image src={thisJob.data.imageUrl} width={500} height={300} alt={thisJob.data.jobTitle + ' picture'} className="object-cover" />
 
