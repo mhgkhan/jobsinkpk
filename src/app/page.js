@@ -152,7 +152,7 @@ export default async function Home() {
                 <th className=" rounded-md md:w-[40%] w-autoo py-2 px-1 border-r border-gray-400 text-center">Title</th>
                 {/* <th className=" rounded-md py-2 px-1 border-r border-gray-400 text-centert wrap-anywhere">Advertisement </th> */}
                 <th className=" rounded-md py-2 px-1 border-r border-gray-400 text-center ">Last Date</th>
-                <th className=" rounded-md  py-2 px-1 border-r border-gray-400 text-center">Job Details </th>
+                {/* <th className=" rounded-md  py-2 px-1 border-r border-gray-400 text-center">Open </th> */}
               </tr>
             </thead>
             <tbody>
@@ -161,10 +161,11 @@ export default async function Home() {
                   <tr><td colSpan={4} className="text-red-600 text-lg text-center my-5">{"No Active Advertaisments"}</td></tr> : allJobs?.data?.reverse().map((ele, ind) => {
                     return <tr key={ind} className="my-1 border-b border-gray-400 rounded-md even:bg-[#b6f8e8e1]">
                       <th className="rounded-md text-center py-2 px-1   ">{ind + 1}</th>
-                      <th className="rounded-md  text-center md:w-[40%] w-autoo py-2 px-1    text-left">{ele.jobTitle}</th>
+                      <th className="rounded-md  text-center md:w-[40%] w-autoo py-2 px-1    text-left"> <Link href={`/job/${ele.slug}`} className="w-full text-blue-600 p-2 rounded-lg font-bold">{ele.jobTitle} &nbsp; Read more..</Link></th>
+                    
                       {/* <th className="rounded-md text-center py-2 px-1    wrap-anywhere"><Link href={ele.imageUrl} target="_blank" className="w-full text-blue-600 p-2 wrap-anywhere rounded-lg font-bold">Advertisement</Link></th> */}
                       <th className="rounded-md text-center py-2 px-1   wrap-anywhere">{`${new Date(ele.expiryDate).getDate()}-${new Date(ele.expiryDate).getMonth()}-${new Date(ele.expiryDate).getFullYear()}`}</th>
-                      <th className="rounded-md text-center py-2 px-1   "> <Link href={`/job/${ele.slug}`} className="w-full text-blue-600 p-2 rounded-lg font-bold">Job Details</Link> </th>
+                      {/* <th className="rounded-md text-center py-2 px-1   "> <Link href={`/job/${ele.slug}`} className="w-full text-blue-600 p-2 rounded-lg font-bold">Open</Link> </th> */}
                     </tr>
                   }
                   )}
