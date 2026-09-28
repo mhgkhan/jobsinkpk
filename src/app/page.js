@@ -160,7 +160,7 @@ export default async function Home() {
                     return <tr key={ind} className="my-1 border-b border-gray-400 rounded-md even:bg-[#b6f8e8e1]">
                       <th className="w-[50px] rounded-md text-center py-2 px-1   ">{ind + 1}</th>
                       <th className="rounded-md  text-center  w-auto py-2 px-1"><Link href={`/job/${ele.slug}`} className="w-full text-blue-600 p-2 rounded-lg font-bold">{ele.jobTitle}....</Link></th>
-                      <th className="rounded-md text-center py-2 px-1   wrap-anywhere">{`${new Date(ele.expiryDate).getDate()}-${new Date(ele.expiryDate).getMonth()}-${new Date(ele.expiryDate).getFullYear()}`}</th>
+                      <th className="rounded-md text-center py-2 px-1   wrap-anywhere">{new Date(ele.expiryDate).toLocaleDateString("en-GB")}</th>
                     </tr>
                   }
                   )}
