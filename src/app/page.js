@@ -147,7 +147,7 @@ export default async function Home() {
           <h2 className="text-2xl font-bold"> Today Latest Jobs </h2>
           <table className="my-5 w-full border border-1 border-gray-300 md:text-auto text-sm">
             <thead>
-              <tr className=" text-xl my-1 border-b border-gray-400 rounded-md">
+              <tr className=" md:text-xl  my-1 border-b border-gray-400 rounded-md">
                 <th className=" rounded-md  py-2 px-1 border-r border-gray-400 text-center wrap-anywhere">No</th>
                 <th className=" rounded-md md:w-[50%] w-autoo py-2 px-1 border-r border-gray-400 text-center">Title</th>
                 {/* <th className=" rounded-md py-2 px-1 border-r border-gray-400 text-centert wrap-anywhere">Advertisement </th> */}
