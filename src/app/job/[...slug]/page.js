@@ -132,19 +132,23 @@ const page = async ({ params }) => {
                             <h1 className="mx-auto text-center md:text-4xl text-2xl font-bold my-1" >{thisJob.data.jobTitle??"Job title not found"}</h1>
                             <p className="text-lg text-center my-2">{thisJob.data.jobDescription}</p>
 
-                            <div className="px-2 my-5 flex items-center justify-between flex-wrap">
+                            <div className="px-2 my-5 flex items-center justify-between flex-wrap bg-[#d9f9df80] backdrop-blur-sm p-2 rounded-md gap-2">
 
-                                <div className=" block-category px-1 flex items-center justify-center gap-2 flex-col  border border-1 border-green-500 my-2 md:w-auto w-full rounded-md">
+                                <div className=" block-category px-1 flex items-center justify-center gap-2 flex-col   my-2 md:w-auto w-full rounded-md">
                                     <h3>Category</h3>
                                     <p className="text-lg font-bold">{thisJob.data.jobCategory}</p>
                                 </div>
-                                <div className=" block-category px-1 flex items-center justify-center gap-2 flex-col  border border-1 border-green-500 my-2 md:w-auto w-full rounded-md">
+                                <div className=" block-category px-1 flex items-center justify-center gap-2 flex-col   my-2 md:w-auto w-full rounded-md">
                                     <h3>Post Date</h3>
                                     <p className="text-lg font-bold">{`${new Date(thisJob.data.updatedAt).getDate()}-${new Date(thisJob.data.updatedAt).getMonth()}-${new Date(thisJob.data.updatedAt).getFullYear()}`}</p>
                                 </div>
-                                <div className=" block-category px-1 flex items-center justify-center gap-2 flex-col  border border-1 border-green-500 my-2 md:w-auto w-full rounded-md">
+                                <div className=" block-category px-1 flex items-center justify-center gap-2 flex-col  my-2 md:w-auto w-full rounded-md">
                                     <h3>Last Date </h3>
                                     <p className="text-lg font-bold">{`${new Date(thisJob.data.expiryDate).getDate()}-${new Date(thisJob.data.expiryDate).getMonth()}-${new Date(thisJob.data.expiryDate).getFullYear()}`}</p>
+                                </div>
+                                <div className=" block-category px-1 flex items-center justify-center gap-2 flex-col  my-2 md:w-auto w-full rounded-md">
+                                    <h3>Job Visitors  </h3>
+                                    <p className="text-lg font-bold">{thisJob.data.totalViews || 0}</p>
                                 </div>
 
                             </div>
