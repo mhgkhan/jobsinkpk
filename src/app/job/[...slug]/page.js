@@ -140,11 +140,11 @@ const page = async ({ params }) => {
                                 </div>
                                 <div className=" block-category px-1 flex items-center justify-center gap-2 flex-col   my-2 md:w-auto w-full rounded-md">
                                     <h3>Post Date</h3>
-                                    <p className="text-lg font-bold">{`${new Date(thisJob.data.updatedAt).getDate()}-${new Date(thisJob.data.updatedAt).getMonth()}-${new Date(thisJob.data.updatedAt).getFullYear()}`}</p>
+                                    <p className="text-lg font-bold">{new Date(thisJob.data.createdAt).toLocaleDateString()}</p>
                                 </div>
                                 <div className=" block-category px-1 flex items-center justify-center gap-2 flex-col  my-2 md:w-auto w-full rounded-md">
                                     <h3>Last Date </h3>
-                                    <p className="text-lg font-bold">{`${new Date(thisJob.data.expiryDate).getDate()}-${new Date(thisJob.data.expiryDate).getMonth()}-${new Date(thisJob.data.expiryDate).getFullYear()}`}</p>
+                                    <p className="text-lg font-bold">{new Date(thisJob.data.expiryDate).toLocaleDateString()}</p>
                                 </div>
                                 <div className=" block-category px-1 flex items-center justify-center gap-2 flex-col  my-2 md:w-auto w-full rounded-md">
                                     <h3>Job Visitors  </h3>
