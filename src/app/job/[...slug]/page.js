@@ -4,12 +4,17 @@ import { headers } from "next/headers";
 
 
 
-const fetchJob = async (slug) => {
+const fetchJob = async (slug, userip, userdevice, useros) => {
     let jobObj = {};
     try {
         const request = await fetch(`${process.env.DOMAIN}/publicaccess/jobs/${slug}/`, {
             method: "GET",
-            headers: { "content-type": "application/json" }
+            headers: {
+                "content-type": "application/json",
+                userip,
+                userdevice,
+                useros
+            }
         })
 
         if (!request.ok) {
@@ -50,12 +55,24 @@ const page = async ({ params }) => {
 
 
     const { slug } = await params;
-    const thisJob = await fetchJob(slug);
+
+    const userHeaders = await headers();
+
+    const ip = userHeaders.get("x-forwarded-for")?.split(",")[0] || userHeaders.get("x-real-ip") || "Unknown";
+    const ua = userHeaders.get("user-agent") || "Unknown";
+
+    let os = "Unknown OS";
+    if (/Windows/i.test(ua)) os = "Windows";
+    else if (/Macintosh/i.test(ua)) os = "MacOS";
+    else if (/Linux/i.test(ua)) os = "Linux";
+    else if (/Android/i.test(ua)) os = "Android";
+    else if (/iPhone|iPad/i.test(ua)) os = "iOS";
+
+    const device = /Mobile/i.test(ua) ? "Mobile" : "Desktop";
 
 
 
-
-
+    const thisJob = await fetchJob(slug, ip, device, os);
 
 
 
