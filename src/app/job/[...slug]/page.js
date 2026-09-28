@@ -23,7 +23,7 @@ const fetchJob = async (slug, userip, userdevice, useros) => {
             jobObj.message = request.statusText
             return jobObj;
         }
-
+        
         const response = await request.json();
         if (response.success) {
             jobObj.success = true;
@@ -75,37 +75,41 @@ const page = async ({ params }) => {
     const thisJob = await fetchJob(slug, ip, device, os);
 
 
+    // console.log(thisJob)
+
+
+
 
     const metadata = {
-        title: thisJob.data.jobTitle,
-        description: thisJob.data.jobDescription,
+        title: thisJob?.data?.jobTitle ?? "Job title not found",
+        description: thisJob?.data?.jobDescription ?? "Job description not found",
 
         icons: {
-            icon: thisJob.data.imageUrl,
+            icon: thisJob?.data?.imageUrl ?? "https://jobsinkpk..online/logo.jpg",
         },
 
         // ✅ Social preview image (Open Graph + Twitter)
         openGraph: {
-            title: thisJob.data.jobTitle,
-            description: thisJob.data.jobDescription,
-            url: `https://jobsinkpk.vercel.app/job/${slug}`,
+            title: thisJob?.data?.jobTitle ?? "Job title not found",
+            description: thisJob?.data?.jobDescription ?? "Job description not found",
+            url: `https://jobsinkpk.online/job/${slug}`,
             siteName: "JobsInKPK",
             images: [
                 {
-                    url: thisJob.data.jobImage || "https://jobsinkpk.vercel.app/default-preview.jpg",
+                    url: thisJob?.data?.jobImage || "https://jobsinkpk.online/logo.jpg",
                     width: 1200,
                     height: 630,
-                    alt: thisJob.data.imageUrl,
+                    alt: thisJob?.data?.imageUrl ?? "Job image not found",
                 },
             ],
             type: "website",
         },
         twitter: {
             card: "summary_large_image",
-            title: thisJob.data.jobTitle,
-            description: thisJob.data.jobDescription,
+            title: thisJob?.data?.jobTitle ?? "Job title not found",
+            description: thisJob?.data?.jobDescription ?? "Job description not found",
             images: [
-                thisJob.data.imageUrl || "https://jobsinkpk.vercel.app/default-preview.jpg",
+                thisJob?.data?.imageUrl || "https://jobsinkpk.online/logo.jpg",
             ],
         },
     }
