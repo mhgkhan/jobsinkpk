@@ -140,7 +140,7 @@ const page = async ({ params }) => {
                                 </div>
                                 <div className=" block-category px-1 flex items-center justify-center gap-2 flex-col   my-2 md:w-auto w-full rounded-md">
                                     <h3>Post Date</h3>
-                                    <p className="text-lg font-bold">{new Date(thisJob.data.createdAt).toLocaleDateString()}</p>
+                                    <p className="text-lg font-bold">{new Date(Date.now(thisJob.data.expiryDate)).toLocaleDateString()}</p>
                                 </div>
                                 <div className=" block-category px-1 flex items-center justify-center gap-2 flex-col  my-2 md:w-auto w-full rounded-md">
                                     <h3>Last Date </h3>
