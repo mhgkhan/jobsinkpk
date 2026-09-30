@@ -34,6 +34,9 @@ const Header = () => {
                         <Link href={"/"} className='text-white font-bold text-lg'>Private Jobs</Link>
                     </li> */}
                     <li className='md:w-auto w-full text-center'>
+                        <Link href={"/downloads"} className='text-white font-bold text-lg'>Downloads </Link>
+                    </li>
+                    <li className='md:w-auto w-full text-center'>
                         <Link href={"/contactus"} className='text-white font-bold text-lg'>Contact us </Link>
                     </li>
                 </ul>
