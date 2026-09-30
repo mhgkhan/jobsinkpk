@@ -24,6 +24,7 @@ export default function Downloads() {
                         { name: " ATS Friendly Resume Template  ", link: `/downloads/ats_friendly_resume_tempelate`, screenshot: "/files/screenshots/Screenshot_30-9-2026_31748_.jpeg" },
                         { name: " FC Teaching Hospital Job Application Form ", link: "/downloads/fc_teaching_hospital_job_application_form", screenshot: "/files/screenshots/Screenshot_30-9-2026_31810_.jpeg" },
                         { name: "Simple Job Application Form", link: "/downloads/job_application_form", screenshot: "/files/screenshots/Screenshot_30-9-2026_31821_.jpeg" },
+                        { name: "Low Income Poverty Certificate Form", link: "/downloads/low_income_poverty_certificate", screenshot: "/files/screenshots/lowincome.jpeg" },
                     ]).map((ele, ind) => {
                         return <div key={ind + 1} className="download-block w-[400px] max-h-[550px] border border-1 border-gray-400 rounded-md shadow-md shadow-gray-200">
                             <div className="preview w-full h-[200px] overflow-auto rounded-md shadow-md shadow-gray-300 overflow-hidden">
@@ -32,7 +33,7 @@ export default function Downloads() {
 
                             <h3 className="text-xl text-left font-bold my-5 mx-2">{ele.name}</h3>
                             <Link href={`${ele.link}`} target="_blank" className="text-blue-600 w-full text-center mx-auto  text-left mt-3 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded block">
-                                Downlaod Now
+                                Download Now
                             </Link>
                         </div>
 
