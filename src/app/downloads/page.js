@@ -25,6 +25,10 @@ export default function Downloads() {
                         { name: " FC Teaching Hospital Job Application Form ", link: "/downloads/fc_teaching_hospital_job_application_form", screenshot: "/files/screenshots/Screenshot_30-9-2026_31810_.jpeg" },
                         { name: "Simple Job Application Form", link: "/downloads/job_application_form", screenshot: "/files/screenshots/Screenshot_30-9-2026_31821_.jpeg" },
                         { name: "Low Income Poverty Certificate Form", link: "/downloads/low_income_poverty_certificate", screenshot: "/files/screenshots/lowincome.jpeg" },
+                        { name: "Birth Registration Certificate Form", link: "/downloads/Birth_Registration_Form", screenshot: "/files/screenshots/birthregistrationform.jpeg" },
+                        { name: "Death Registration Certificate Form", link: "/downloads/Death_Registration_Form", screenshot: "/files/screenshots/deathregistrationform.jpeg" },
+                        { name: "Death Registration Certificate Form", link: "/downloads/Death_Registration_Form", screenshot: "/files/screenshots/deathregistrationform.jpeg" },
+                        { name: "Nikah (Marrage) Registration Certificate Form", link: "/downloads/Nikkaah_Registration_Form", screenshot: "/files/screenshots/nikahregistration.jpeg" },
                     ]).map((ele, ind) => {
                         return <div key={ind + 1} className="download-block w-[400px] max-h-[550px] border border-1 border-gray-400 rounded-md shadow-md shadow-gray-200">
                             <div className="preview w-full h-[200px] overflow-auto rounded-md shadow-md shadow-gray-300 overflow-hidden">
