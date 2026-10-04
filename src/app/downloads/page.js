@@ -28,7 +28,6 @@ export default function Downloads() {
                             { name: "Low Income Poverty Certificate Form", link: "/downloads/low_income_poverty_certificate", screenshot: "/files/screenshots/lowincome.jpeg" },
                             { name: "Birth Registration Certificate Form", link: "/downloads/Birth_Registration_Form", screenshot: "/files/screenshots/birthregistrationform.jpeg" },
                             { name: "Death Registration Certificate Form", link: "/downloads/Death_Registration_Form", screenshot: "/files/screenshots/deathregistrationform.jpeg" },
-                            { name: "Death Registration Certificate Form", link: "/downloads/Death_Registration_Form", screenshot: "/files/screenshots/deathregistrationform.jpeg" },
                             { name: "Nikah (Marrage) Registration Certificate Form", link: "/downloads/Nikkaah_Registration_Form", screenshot: "/files/screenshots/nikahregistration.jpeg" },
                         ]
                     ).map((ele, ind) => {
