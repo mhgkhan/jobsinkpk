@@ -19,23 +19,18 @@ const notFoundPage = () => {
                         Home
                     </a>
                     <a
-                        href="/contact"
+                        href="/contactus"
                         className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition"
                     >
                         Contact Us
                     </a>
                     <a
-                        href="/government-jobs"
+                        href="/downloads"
                         className="px-4 py-2 bg-purple-600 text-white rounded hover:bg-purple-700 transition"
                     >
-                        Government Jobs
+                        Downloads
                     </a>
-                    <a
-                        href="/private-jobs"
-                        className="px-4 py-2 bg-orange-600 text-white rounded hover:bg-orange-700 transition"
-                    >
-                        Private Jobs
-                    </a>
+              
                 </div>
             </section>
         </main>
