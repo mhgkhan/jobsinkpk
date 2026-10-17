@@ -13,7 +13,7 @@ const SimpleDashboard = ({visitors,jobs}) => {
 
             <div className="block-dev w-full h-auto p-2 bg-green-100 rounded-md flex items-center justify-center gap-2 flex-col">
                 <span className='md:text-3xl text-xl  font-bold'>{jobs}+</span>
-                <span className='md:text-2xl md:my-3 my-1 text-lg  '>Jobs</span>
+                <span className='md:text-2xl md:my-3 my-1 text-lg  '>Active Jobs</span>
             </div>
         </div>
     )
